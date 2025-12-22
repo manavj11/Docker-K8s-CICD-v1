@@ -1,11 +1,2 @@
-# doc-analysis-v1/requirements.txt
-# Core dependencies for the ML pipeline
-scikit-learn
-numpy
-pandas
-nltk
-matplotlib
-seaborn
-jupyterlab
-notebook
-ipykernel
+flask
+redis
