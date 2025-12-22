@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-actions
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-actions
+  template:
+    metadata:
+      labels:
+        app: hello-actions
+    spec:
+      containers:
+        - name: hello-actions
+          image: ghcr.io/manavj11/docker-k8s-cicd-v1:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-actions
+spec:
+  selector:
+    app: hello-actions
+  ports:
+    - port: 80
+      targetPort: 8080
