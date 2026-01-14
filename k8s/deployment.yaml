@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-visitor-counter
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-visitor-counter
+  template:
+    metadata:
+      labels:
+        app: python-visitor-counter
+    spec:
+      containers:
+      - name: python-visitor-counter
+        image: python-visitor-counter:latest
+        ports:
+        - containerPort: 5000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10

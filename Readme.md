@@ -1,16 +1,49 @@
-# Visitor Counter POC
+# Kubernetes + Docker Visitor Counter
 
-A minimal DevOps project demonstrating a Python/Redis stack running on Kubernetes.
+A minimal Python web app that counts visitors, exposes a health check, and is designed to run in Docker and Kubernetes.
 
-## 🚀 Local Development
-1. **Install requirements:** `pip install -r requirements.txt`
-2. **Run App:** `python main.py` (Note: requires local Redis or it will error gracefully)
+This project is beginner-friendly and perfect for learning Docker & Kubernetes using GitHub Codespaces.
 
-## 🐳 Docker Instructions
-1. **Build:** `docker build -t your-username/visitor-app .`
-2. **Push:** `docker push your-username/visitor-app`
+---
 
-## ☸️ Kubernetes Deployment
-1. **Apply manifests:** `kubectl apply -f k8s-all-in-one.yaml`
-2. **Port-forward to view:** `kubectl port-forward svc/web-service 8080:80`
-3. **Open:** [http://localhost:8080](http://localhost:8080)
+## 🚀 What You’ll Learn
+
+- Build a small Python web service
+- Containerize it with Docker
+- Deploy to Kubernetes with Deployment & Service
+- Use `/health` checks
+- Use GitHub Codespaces for development
+
+---
+
+## 📦 Project Structure
+
+k8s-python-visitor-counter/
+├── app/
+│ ├── main.py
+│ └── requirements.txt
+├── Dockerfile
+├── k8s/
+│ ├── deployment.yaml
+│ └── service.yaml
+└── README.md
+
+## 🐍 Python Application
+
+### `app/requirements.txt`
+
+🚀 Running in GitHub Codespaces
+Open this repo in GitHub Codespaces (VS Code in the cloud)
+Build the Docker image:
+docker build -t python-visitor-counter .
+Apply Kubernetes resources:
+kubectl apply -f k8s/
+Forward the service port:
+kubectl port-forward svc/python-visitor-counter-svc 8080:80
+Visit:
+http://localhost:8080/ ⇒ visitor count
+http://localhost:8080/health ⇒ health
+💡 Notes
+Each pod has its own counter — demonstrates stateless scaling
+Health checks help Kubernetes restart bad pods
+
