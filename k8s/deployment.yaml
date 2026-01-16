@@ -1,25 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-visitor-counter
+  name: flask-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: python-visitor-counter
+      app: flask-app
   template:
     metadata:
       labels:
-        app: python-visitor-counter
+        app: flask-app
     spec:
       containers:
-      - name: python-visitor-counter
-        image: python-visitor-counter:latest
-        ports:
-        - containerPort: 5000
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 5000
-          initialDelaySeconds: 5
-          periodSeconds: 10
+        - name: flask-app
+          image: flask-k8s-demo:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000

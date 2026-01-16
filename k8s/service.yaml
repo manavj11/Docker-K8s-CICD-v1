@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: python-visitor-counter-svc
+  name: flask-service
 spec:
-  selector:
-    app: python-visitor-counter
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 5000
   type: NodePort
+  selector:
+    app: flask-app
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30007
