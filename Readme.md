@@ -26,7 +26,7 @@ kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 
 ## Check service details:
-kubectl get svc flask-k8s-demo
+kubectl get svc
 kubectl get pods
 
 ## Access Application
