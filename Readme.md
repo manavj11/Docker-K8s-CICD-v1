@@ -31,14 +31,10 @@ kubectl get pods
 
 ## Access Application
 
-Open the main endpoint - Open your browser and go to:
-http://localhost:30007
+- Open the main endpoint - Open your browser and go to: http://localhost:30007
+  - If everything is working, you should see a greeting message and a visitor count.
 
-If everything is working, you should see a greeting message and a visitor count.
-
-Open the health endpoint - In the same browser, go to:
-http://localhost:30007/health
-
-You should see a simple health message (for example “OK” or “healthy”).
+- Open the health endpoint - In the same browser, go to: http://localhost:30007/health
+  - You should see a simple health message (for example “OK” or “healthy”).
 
 Happy testing!
