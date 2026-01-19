@@ -15,7 +15,7 @@ A minimal Flask app deployed using Docker and Kubernetes.
 ## Requirements
 - Docker
 - Kubernetes (Docker Desktop)
-- - Install and run Docker as normal
+  - Install and run Docker as normal
 - kubectl
 
 ## Build Docker Image
