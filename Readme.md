@@ -15,15 +15,30 @@ A minimal Flask app deployed using Docker and Kubernetes.
 ## Requirements
 - Docker
 - Kubernetes (Docker Desktop)
+- - Install and run Docker as normal
 - kubectl
 
 ## Build Docker Image
-```bash
 docker build -t flask-k8s-demo .
 
 ## Deploy to Kubernetes
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 
+## Check service details:
+kubectl get svc flask-k8s-demo
+kubectl get pods
+
 ## Access Application
+
+Open the main endpoint - Open your browser and go to:
 http://localhost:30007
+
+If everything is working, you should see a greeting message and a visitor count.
+
+Open the health endpoint - In the same browser, go to:
+http://localhost:30007/health
+
+You should see a simple health message (for example “OK” or “healthy”).
+
+Happy testing!
