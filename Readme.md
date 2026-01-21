@@ -1,40 +1,62 @@
 # Flask Kubernetes Demo
 
-A minimal Flask app deployed using Docker and Kubernetes.
+A minimal Flask application containerized with Docker and deployed to Kubernetes.  
+This project demonstrates a simple end-to-end workflow for building, deploying, and accessing a Python web service in a Kubernetes cluster.
 
-## Features
-- Python Flask API
+---
+
+## 🚀 Features
+
+- Python Flask REST API
 - Dockerized application
-- Deployed to Kubernetes
+- Kubernetes deployment and service
 - Health check endpoint
+- Visitor counter example
 
-## Endpoints
-- `/` – returns a greeting and visitor count
-- `/health` – health check
+---
 
-## Requirements
-- Docker
-- Kubernetes (Docker Desktop)
-  - Install and run Docker as normal
-- kubectl
+## 📡 API Endpoints
 
-## Build Docker Image
+| Endpoint   | Description                                   |
+|-----------|-----------------------------------------------|
+| `/`       | Returns a greeting and visitor count           |
+| `/health` | Health check endpoint                          |
+
+---
+
+## 🧰 Requirements
+
+- **Docker**
+- **Kubernetes** (Docker Desktop Kubernetes is sufficient)
+- **kubectl**
+
+Ensure Docker and Kubernetes are installed and running before proceeding.
+
+---
+
+## 🏗️ Build the Docker Image
 docker build -t flask-k8s-demo .
 
-## Deploy to Kubernetes
-kubectl apply -f k8s/deployment.yaml
+## ☸️ Deploy to Kubernetes
+Apply the Kubernetes deployment and service manifests:\
+kubectl apply -f k8s/deployment.yaml\
 kubectl apply -f k8s/service.yaml
 
-## Check service details:
-kubectl get svc
+## 🔍 Verify Deployment
+Check the status of the running pods and services:\
+kubectl get svc\
 kubectl get pods
 
-## Access Application
+## 🌐 Access the Application
 
-- Open the main endpoint - Open your browser and go to: http://localhost:30007
-  - If everything is working, you should see a greeting message and a visitor count.
+Main Endpoint\
+Open your browser and navigate to:\
+http://localhost:30007\
+You should see a greeting message along with a visitor count.
 
-- Open the health endpoint - In the same browser, go to: http://localhost:30007/health
-  - You should see a simple health message (for example “OK” or “healthy”).
+Health Check Endpoint\
+Navigate to:\
+http://localhost:30007/health\
+You should receive a simple health response such as OK or healthy.
 
 Happy testing!
