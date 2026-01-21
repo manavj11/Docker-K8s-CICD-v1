@@ -5,22 +5,13 @@ This project demonstrates a simple end-to-end workflow for building, deploying, 
 
 ---
 
-## 🚀 Features
+## 📡 Features
 
 - Python Flask REST API
 - Dockerized application
 - Kubernetes deployment and service
 - Health check endpoint
 - Visitor counter example
-
----
-
-## 📡 API Endpoints
-
-| Endpoint   | Description                                   |
-|-----------|-----------------------------------------------|
-| `/`       | Returns a greeting and visitor count           |
-| `/health` | Health check endpoint                          |
 
 ---
 
